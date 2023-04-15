@@ -241,7 +241,7 @@ webrtcICETCPMuxAddress:
 paths:
   all:
     source: publisher
-    runOnReady: ffmpeg -i rtsp://localhost:$RTSP_PORT/$RTSP_PATH -c copy -f segment -strftime 1 -segment_time 15 -segment_format mpegts $RTSP_PATH/$RTSP_PATH_%Y-%m-%d_%H-%M-%S.ts
+    runOnReady: ffmpeg -i rtsp://192.168.0.154:$RTSP_PORT/$RTSP_PATH -c copy -f segment -strftime 1 -segment_time 20 -segment_format mpegts $RTSP_PATH/INSTORE_%Y-%m-%d_%H:%M:%S.ts
     runOnReadyRestart: yes
 
 
