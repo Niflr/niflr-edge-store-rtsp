@@ -7,9 +7,9 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y ffmpeg
 
-# Copy the modified mediamtx binary and ALL_VIDEOS folder to the container
+# Copy the modified mediamtx binary and videos folder to the container
 COPY . /app
-COPY ALL_VIDEOS /app/ALL_VIDEOS
+COPY videos /app/videos
 
 # Define the command to run when the container starts
 CMD ["./mediamtx"]
