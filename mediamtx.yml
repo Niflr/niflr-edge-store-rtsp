@@ -465,7 +465,7 @@ paths:
     # * RTSP_PORT: RTSP server port
     # * G1, G2, ...: regular expression groups, if path name is
     #   a regular expression.
-    runOnReady: ffmpeg -rtsp_transport tcp -i rtsp://st.niflrpassdev.com:8554/live/test-store/cam1 -analyzeduration 100M -probesize 100M -c copy -f segment -segment_time 120 -segment_format mp4 -reset_timestamps 1 videos_test/recorded_%Y-%m-%d_%H:%M:%S.mp4
+    runOnReady: ffmpeg -i rtmp://127.0.0.1:1935/$RTSP_PATH -c copy -f segment -strftime 1 -segment_time 20 -segment_format mp4 videos/$RTSP_PATH_INSTORE_%Y-%m-%d_%H:%M:%S.mp4
 
     # Restart the command if it exits.
     runOnReadyRestart: yes
