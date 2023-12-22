@@ -2,10 +2,12 @@
 FROM ubuntu:20.04
 ENV TZ=Asia/Kolkata
 
+COPY rclone.conf /root/.config/rclone/rclone.conf
+
 # Set the working directory in the container
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y ffmpeg
+RUN apt-get update && apt-get install -y ffmpeg ca-certificates
 
 # Copy the modified mediamtx binary and videos folder to the container
 COPY . /app
