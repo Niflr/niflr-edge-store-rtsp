@@ -7,7 +7,7 @@
 # Global settings -> General
 
 # Verbosity of the program; available values are "error", "warn", "info", "debug".
-logLevel: debug
+logLevel: info
 # Destinations of log messages; available values are "stdout", "file" and "syslog".
 logDestinations: [file]
 # If "file" is in logDestinations, this is the file which will receive the logs.
@@ -312,7 +312,7 @@ pathDefaults:
   recordSegmentDuration: 20s
   # Delete segments after this timespan.
   # Set to 0s to disable automatic deletion.
-  recordDeleteAfter: 60s
+  recordDeleteAfter: 0s
 
   ###############################################
   # Default path settings -> Authentication
@@ -540,7 +540,7 @@ pathDefaults:
   # * G1, G2, ...: regular expression groups, if path name is
   #   a regular expression.
   # * MTX_SEGMENT_PATH: segment file path
-  runOnRecordSegmentComplete: './rclone move ./videos rpi-videos: -vv --min-age 25s --metadata'
+  runOnRecordSegmentComplete: './rclone move $MTX_SEGMENT_PATH rpi-videos:rpi-videos/videos/$MTX_PATH -vv --metadata --gcs-bucket-policy-only'
 
 ###############################################
 # Path settings
