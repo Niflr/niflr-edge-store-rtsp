@@ -309,7 +309,7 @@ pathDefaults:
   # Therefore, the part duration is equal to the RPO (recovery point objective).
   recordPartDuration: 100ms
   # Minimum duration of each segment.
-  recordSegmentDuration: 30s
+  recordSegmentDuration: 120s
   # Delete segments after this timespan.
   # Set to 0s to disable automatic deletion.
   recordDeleteAfter: 0s
@@ -540,7 +540,7 @@ pathDefaults:
   # * G1, G2, ...: regular expression groups, if path name is
   #   a regular expression.
   # * MTX_SEGMENT_PATH: segment file path
-  runOnRecordSegmentComplete: 'python3 update_end_time.py ./videos/$MTX_PATH'
+  runOnRecordSegmentComplete:
 
 ###############################################
 # Path settings
