@@ -5,7 +5,8 @@ ENV TZ=Asia/Kolkata
 # Set the working directory in the container
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y ffmpeg
+RUN apt-get update && apt-get install -y ffmpeg ca-certificates
+
 
 # Copy the modified mediamtx binary and videos folder to the container
 COPY . /app
