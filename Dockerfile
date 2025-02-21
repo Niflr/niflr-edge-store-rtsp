@@ -3,6 +3,7 @@ FROM ubuntu:20.04
 ENV TZ=Asia/Kolkata
 
 # Set the working directory in the container
+RUN mkdir -p videos processed_videos
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y ffmpeg ca-certificates
